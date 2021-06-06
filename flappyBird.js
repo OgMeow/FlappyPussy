@@ -17,11 +17,11 @@ pipeNorth.src = "images/pipeNorth.png";
 pipeSouth.src = "images/pipeSouth.png";
 
 // load audio
-var backgroundMusic = new Audio();
+/** var backgroundMusic = new Audio();
 backgroundMusic.src = "sounds/kavinsky-nightcall-instrumental.mp3";
 backgroundMusic.loop = true;
 
-var musicPlayed = false;
+var musicPlayed = false;**/
 
 
 // some variables
@@ -49,10 +49,10 @@ scor.src = "sounds/score.mp3";
 document.addEventListener("keydown",moveUp);
 
 function moveUp(){
-	if(!musicPlayed){
+	/**if(!musicPlayed){
 		backgroundMusic.play();
 		musicPlayed = true;
-	}
+	}**/
     bY -= 25;
     fly.play();
 }
