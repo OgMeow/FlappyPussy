@@ -53,7 +53,7 @@ function moveUp(){
 		backgroundMusic.play();
 		musicPlayed = true;
 	}**/
-    bY -= 25;
+    bY -= 30;
     fly.play();
 }
 
