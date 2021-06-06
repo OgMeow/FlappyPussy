@@ -68,6 +68,9 @@ pipe[0] = {
 
 // draw images
 
+var death = false;
+var popup = false;
+
 function draw(){
     
     ctx.drawImage(bg,0,0);
@@ -91,7 +94,12 @@ function draw(){
         // detect collision
         
         if( bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width && (bY <= pipe[i].y + pipeNorth.height || bY+bird.height >= pipe[i].y+constant) || bY + bird.height >=  cvs.height - fg.height){
-            location.reload(); // reload the page
+			death = true;
+			if(death && popup == false){
+				window.alert(score+" points");
+				popup = true;
+				location.reload(); // reload the page 
+			}
         }
         
         if(pipe[i].x == 5){
@@ -111,8 +119,8 @@ function draw(){
     ctx.fillStyle = "#000";
     ctx.font = "20px Verdana";
     ctx.fillText("Score : "+score,10,cvs.height-20);
-    
-    requestAnimationFrame(draw);
+    if(!death)
+		requestAnimationFrame(draw);
     
 }
 
