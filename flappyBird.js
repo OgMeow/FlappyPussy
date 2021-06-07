@@ -2,6 +2,9 @@ var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 
 
+var hammertime = new Hammer.Manager(cvs);
+
+
 // load images
 
 var bird = new Image();
@@ -56,6 +59,10 @@ function moveUp(){
     bY -= 30;
     fly.play();
 }
+
+hammertime.add( new Hammer.Tap({ event: 'singletap' }) );
+hammertime.on("singletap", moveUp);
+
 
 // pipe coordinates
 
